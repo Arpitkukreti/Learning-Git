@@ -17,8 +17,6 @@ async function getMovies(url) {
   console.log(data);
 
   showMovies(data.results);
-
-  // main.insertAdjacentHTML("beforeend", html);
 }
 
 function showMovies(movies) {
@@ -37,15 +35,7 @@ function showMovies(movies) {
     <p class="movie-title">${original_title}</p>
     <span class="rating ${getClassColor(vote_average)}">${vote_average}</span>
     </div>
-    
     `;
-    // <p class="overview">${overview}</p>
-
-    // const card = document.querySelectorAll(".movie-card");
-
-    // if (result.poster_path === null) {
-    //   card.remove();
-    // }
     main.appendChild(divEl);
   });
 }
@@ -60,7 +50,6 @@ form.addEventListener("submit", function (e) {
   e.preventDefault();
 
   const searchValue = searchEl.value;
-  console.log(searchValue);
 
   if (searchValue) {
     getMovies(searchAPI + searchValue);
